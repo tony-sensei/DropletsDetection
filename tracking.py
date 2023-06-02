@@ -37,6 +37,9 @@ def main(input_video: str, model_path: str, output_video: str, confidence_thresh
 
     # load the pre-trained YOLOv8 model
     model = YOLO(model_path)
+    # The DeepSort object tracks objects over time.
+    # max_age parameter specifies the number of consecutive frames an object is allowed to
+    # be missing and still be kept for future detections.
     tracker = DeepSort(max_age=max_age)
 
     while video_cap.isOpened():
@@ -61,8 +64,8 @@ def main(input_video: str, model_path: str, output_video: str, confidence_thresh
             # extract the confidence (i.e., probability) associated with the prediction
             confidence = data[4]
 
-            # filter out weak detections by ensuring the
-            # confidence is greater than the minimum confidence
+            # confidence_threshold is a parameter to filter out weak detections.
+            # It ensures the confidence is greater than the minimum confidence.
             if float(confidence) < confidence_threshold:
                 continue
 
@@ -108,6 +111,10 @@ if __name__ == "__main__":
     input_video = "path/to/input/video.mp4"
     model_path = "path/to/best.pt"
     output_video = "path/to/output.mp4"
+    # confidence_threshold is a parameter to filter out weak detections by ensuring the confidence is
+    # greater than this minimum confidence.
     confidence_threshold = 0.6
+    # max_age parameter specifies the number of consecutive frames an object is allowed to be
+    # missing and still be kept for future detections.
     max_age = 15
     main(input_video, model_path, output_video, confidence_threshold, max_age)

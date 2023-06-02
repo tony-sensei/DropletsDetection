@@ -50,7 +50,8 @@ Go through each code block in the `dropletsDetection.ipynb` notebook and modify 
 
 ### 4. Droplet Tracking
 
-Use the `tracking.py` script to track the droplets. You may need to modify the code based on different file paths.
+Use the `tracking.py` script to track the droplets. You may need to modify the code based on different file paths, 
+and tuning confidence_threshold and max_age for getting better performance for difference circumstances.
 
 Command to run the script:
 ```bash
