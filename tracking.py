@@ -105,12 +105,9 @@ def main(input_video: str, model_path: str, output_video: str, confidence_thresh
 
 
 if __name__ == "__main__":
-    # input_video = "path/to/input/video.mp4"
-    # model_path = "path/to/best.pt"
-    # output_video = "path/to/output.mp4"
-    input_video = "video_data/Rainbow 11-11-22.m4v"
-    model_path = "/Users/tony/PycharmProjects/DropletsDetection/best.pt"
-    output_video = "output.mp4"
+    input_video = "path/to/input/video.mp4"
+    model_path = "path/to/best.pt"
+    output_video = "path/to/output.mp4"
     confidence_threshold = 0.6
     max_age = 15
     main(input_video, model_path, output_video, confidence_threshold, max_age)
