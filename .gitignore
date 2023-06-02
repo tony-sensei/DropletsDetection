@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Intellij
+.idea/
+
+# .DS_Store files
+.DS_Store
+
+# video data
+video_data/
+
+# AI model
+*.pt
